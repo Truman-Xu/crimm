@@ -17,7 +17,10 @@ class Atom(_Atom):
         element=None,
         pqr_charge=None,
         radius=None,
-        topo_definition = None
+        topo_definition = None,
+        mass = None
+        # CHARMM atoms have slightly different mass (less sig figs) than the
+        # IUPAC element mass table. This is used to override the mass table.
     ) -> None:
         self.level = "A"
         # Reference to the residue
@@ -42,7 +45,10 @@ class Atom(_Atom):
         self.xtra = {}
         assert not element or element == element.upper(), element
         self.element = self._assign_element(element)
-        self.mass = self._assign_atom_mass()
+        if self.mass is None:
+            self.mass = self._assign_atom_mass()
+        else:
+            self.mass = mass
         self.pqr_charge = pqr_charge
         self.radius = radius
 

@@ -22,6 +22,8 @@ class Residue(_Residue):
         self.is_patch = None
         self.param_desc = None
         self.undefined_atoms = None
+        self.last_neighbour = None
+        self.next_neighbour = None
     
     @property
     def atoms(self):
