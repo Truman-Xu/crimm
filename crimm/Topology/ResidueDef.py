@@ -83,7 +83,7 @@ class Alanine(ResidueDefinition):
             'triple':(),
             'aromatic':()
         }
-        self.impropers = (('N', '-C', 'CA', 'HN'),('C', 'CA', '+N', 'O'))
+        self.impropers = (('N', '-C', 'CA', 'HN'), ('C', 'CA', '+N', 'O'))
         self.cmap = (('-C', 'N', 'CA', 'C'), ('N', 'CA', 'C', '+N'))
-        self.H_donors = ('HN', 'N')
-        self.H_acceptors = ('O', 'C')
+        self.H_donors = (('HN', 'N'), )
+        self.H_acceptors = (('O', 'C'), )

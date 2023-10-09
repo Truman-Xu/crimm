@@ -45,7 +45,7 @@ class Atom(_Atom):
         self.xtra = {}
         assert not element or element == element.upper(), element
         self.element = self._assign_element(element)
-        if self.mass is None:
+        if mass is None:
             self.mass = self._assign_atom_mass()
         else:
             self.mass = mass
